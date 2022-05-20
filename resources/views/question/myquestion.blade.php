@@ -8,7 +8,7 @@
 	@endif
 <div id="myquestion">
     <div class="title">
-        <p>{{$auth->username}}さんが投稿した悩み/相談</p>
+        <p>{{$auth->username}}さんが投稿した悩み/相談と</p>
     </div> 
     <div class="content row">
     	<div class="col-sm-8" style="text-align: center;">
