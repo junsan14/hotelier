@@ -8,17 +8,18 @@
 	@endif
 <div id="myquestion">
     <div class="title">
-        <p>{{$auth->username}}さんが投稿した悩み/相談と</p>
+        <p>{{$auth->username}}さんが投稿した悩み/相談</p>
     </div> 
     <div class="content row">
+  
+    	@foreach($questions as $i=> $question)
     	<div class="col-sm-8" style="text-align: center;">
-	    	@if($questions !== '')
+	    	@if(!$question)
 	    	まだ何も投稿しておりません<br>
 	    	<a href="{{route('question.new')}}">こちらから</a>
 	    	{{$auth->username}}さんの悩みや相談をしてみましょう
 	    	@endisset
 	    </div>
-    	@foreach($questions as $i=> $question)
         <div class="col-sm-8 question-list" data-id="{{$question->id}}">
         	<div class="col-sm-12">
 	        		{{$question->title}}
