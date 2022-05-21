@@ -34,6 +34,7 @@
                 @guest
                 <div class="item"><a href="{{route('register')}}">ユーザー登録</a></div>
                 @else
+                <div class="item"><a href="{{route('question.new')}}">質問投稿</a></div>
                 <div class="item"><a href="{{route('myquestion.show')}}">自分の投稿</a></div>
                  <div class="item"><a href="{{route('profile.edit')}}">プロフィール</a></div>
                 @endguest
