@@ -21945,11 +21945,23 @@ body .icon {
 #show .comment-list {
   margin: 40px auto;
 }
+@media screen and (max-width: 768px) {
+  #show .comment-list {
+    margin: 0;
+  }
+}
 #show .comment-list .comment-list-item {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
-  line-height: 30px;
+  line-height: 40px;
+  font-size: 16px;
   padding: 20px;
   margin: 5px;
+}
+@media screen and (max-width: 768px) {
+  #show .comment-list .comment-list-item {
+    font-size: 11px;
+    line-height: 25px;
+  }
 }
 
 #question .question-list {
