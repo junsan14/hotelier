@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
         ];
         foreach($category01 as $category){
             $db = new Carbon();
-             DB::table('users')->insert([
+             DB::table('categories')->insert([
             'type_id' => 1,
             'name' => $category,
             'created_at'=> Carbon::now(),
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
         ];
         foreach($category02 as $category){
             $db = new Carbon();
-             DB::table('users')->insert([
+             DB::table('categories')->insert([
             'type_id' => 2,
             'name' => $category,
             'created_at'=> Carbon::now(),
