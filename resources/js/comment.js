@@ -30,7 +30,14 @@ export function fetchComment(){
 			      		$list_area.append(
 			      			`<div class="comment-list-item" data-comment-id="${comment.id}">
 			      			 	<div class="js-comment-content">${comment.content}</div>
-			      			 	<div class="js-like-area like-area">
+			      			 		
+			        	        <div class="post-desc">
+					    			<div class="js-post-profile post-profile">
+						        		${users[i].area}${users[i].hotel_type}/${users[i].work_title}/${users[i].work_length}/${users[i].username} さん
+						        	</div>
+						        </div>
+						        <div class="post-desc">
+						        	<div class="js-like-area like-area">
 					      			 <div class="like-btn">
 							        	 <a href="" class="js-unlike unlike show">
 											<i class="fa-solid fa-heart" style="color: red;"></i>
@@ -42,11 +49,7 @@ export function fetchComment(){
 					        	     <div class="like-count js-like-count">
 
 					        	     </div>
-				        	    </div>	
-			        	        <div class="post-desc">
-					    			<div class="js-post-profile post-profile">
-						        		${users[i].area}${users[i].hotel_type}/${users[i].work_title}/${users[i].work_length}/${users[i].username} さん
-						        	</div>
+				        	    	</div>
 						        	<div class="js-post-date post-date">
 						        		${time[i]}
 						        	</div>

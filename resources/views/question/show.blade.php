@@ -11,21 +11,6 @@
         	<div class="content">
         		{{ $question->content}}
         	</div>
-        	<div class="like-area js-like-area" data-comment-id="0">
-	        	<div class="like-btn">
-		        	<a href="" class="js-unlike unlike">  
-		        	   		
-						<i class="fa-solid fa-heart" style="color: red;"></i>
-					</a>				   
-					<a href="" class="js-like like">
-						<i class="fa-regular fa-heart"></i>
-					</a>
-	        	</div>
-	        	<div class="like-count js-like-count">
-	        		
-	        	</div>	
-	        	
-	        </div>
 
         	<div class="post-desc">     		
 	        		<div class="tag col-sm-3">
@@ -70,6 +55,20 @@
 	        	<div class="post-profile">
 	        		{{$user->area}}{{$user->hotel_type}}/{{$user->work_title}}
 	        		{{$user->username}} さん
+	        	</div>
+	        </div>
+	        <div class="post-desc">
+	        	<div class="like-area js-like-area" data-comment-id="0">
+	        	<div class="like-btn">
+			        	<a href="" class="js-unlike unlike">  		   
+							<i class="fa-solid fa-heart" style="color: red;"></i>
+						</a>				   
+						<a href="" class="js-like like">
+							<i class="fa-regular fa-heart"></i>
+						</a>
+		        	</div>
+		        	<div class="like-count js-like-count">
+		        	</div>	        	
 	        	</div>
 	        	<div class="post-date">
 	        		{{$question->created_at}}

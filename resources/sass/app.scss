@@ -286,11 +286,15 @@ body{
 	& .like-area{
 		display: flex;
 		justify-content: flex-end;
+		padding: $margin-mm;
 
 		& .like-btn{
 			position: relative;
+			font-size: 20px;
+			top: -1px;
+			right: -3px;
 			@include mq(md){
-					font-size: 20px;
+					font-size: 15px;
 				}
 			& .like, .unlike{
         transition: ease .5s; 
@@ -321,6 +325,7 @@ body{
 			 justify-content: flex-end;
 			 font-size: 13px;
 			 line-height: 2;
+			 align-items:center;
 				@include mq(md){
 				  font-size: 9px;
 				}
@@ -439,6 +444,10 @@ body{
 				font-size: 11px;
 				line-height: 25px;
 			}
+			& .comment-content{
+				margin-bottom: $margin-sm;
+			}
+
 
 
 		}

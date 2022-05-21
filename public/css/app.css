@@ -4835,6 +4835,7 @@ textarea.form-control-lg {
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
+  border-color: #dee2e6;
 }
 
 .page-link {
@@ -21809,13 +21810,17 @@ body .icon {
 .container .like-area {
   display: flex;
   justify-content: flex-end;
+  padding: 5px;
 }
 .container .like-area .like-btn {
   position: relative;
+  font-size: 20px;
+  top: -1px;
+  right: -3px;
 }
 @media screen and (max-width: 768px) {
   .container .like-area .like-btn {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 .container .like-area .like-btn .like, .container .like-area .like-btn .unlike {
@@ -21845,6 +21850,7 @@ body .icon {
   justify-content: flex-end;
   font-size: 13px;
   line-height: 2;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   .container .post-desc {
@@ -21959,6 +21965,9 @@ body .icon {
     font-size: 11px;
     line-height: 25px;
   }
+}
+#show .comment-list .comment-list-item .comment-content {
+  margin-bottom: 20px;
 }
 
 #question .question-list {

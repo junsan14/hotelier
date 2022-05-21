@@ -14,7 +14,7 @@ class CommentController extends Controller
 {
     public function storeComment(Request $request){
         $auth = Auth::user();
-        if($auth){
+        if($auth->hotel_adr){
             $comment = new Comment;
             $comment->question_id = $request->question_id;
             $comment->user_id = $auth->id;
