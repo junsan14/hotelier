@@ -4835,7 +4835,6 @@ textarea.form-control-lg {
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
-  border-color: #dee2e6;
 }
 
 .page-link {
