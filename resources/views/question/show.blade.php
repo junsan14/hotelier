@@ -77,7 +77,6 @@
 	        </div>
        	
         </div>
-    </div>
     <div class="col-sm-8 pagenation">
     		<div class="back">
 				<a class="js-back-btn back-btn"><i class="fa-solid fa-arrow-left back-btn"></i>		</a>
@@ -93,7 +92,9 @@
     	</form>
 	</div>
 	@endisset
+
 		<div class="title">コメント一覧</div>
+
 	@if(!$auth)
 	<div class="visiter-advice">
 			コメント閲覧希望は
@@ -124,7 +125,7 @@
 	@endif
 
 
-
+    </div>
 
 </div>
 
