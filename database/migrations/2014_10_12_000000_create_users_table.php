@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->id('twitter_id');
+            $table->bigIncrements();
+            $table->integer('twitter_id');
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at');
