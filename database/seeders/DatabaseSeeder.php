@@ -60,6 +60,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         }
+        $category01 = [
+            '職場',
+            'ゲスト',
+            '給料',
+            '恋愛',
+            '子育て',
+            '将来',
+            'その他',
+
+        ];
+        foreach($category01 as $category){
+            $db = new Carbon();
+             DB::table('users')->insert([
+            'type_id' => 1,
+            'name' => $category,
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now(),
+        ]);
+        }
+        $category02 = [
+            'フロント',
+            '料飲サービス',
+            '料理',
+            'アクティビティ',
+            '清掃',
+            'その他',
+
+        ];
+        foreach($category02 as $category){
+            $db = new Carbon();
+             DB::table('users')->insert([
+            'type_id' => 2,
+            'name' => $category,
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now(),
+        ]);
+        }
         
     }
 }

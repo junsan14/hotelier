@@ -116,7 +116,7 @@
 					    		<option value="勤続2年">2年</option>
 					    		<option value="勤続3年">3年</option>    
 					    		<option value="勤続4年">4年</option> 
-					    		<option value="勤続5年以上">5年</option>  		
+					    		<option value="勤続5年以上">5年以上</option>  		
 					    	</select>
 					  </div>
 					  <br>
