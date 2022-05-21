@@ -22,8 +22,8 @@ class QuestionController extends Controller
     }
     public function post(Request $request){
         $request->validate([
-            'title' => ['required', 'string', 'max:100'],
-            'content' => ['required', 'max:300'],
+            'title' => ['required', 'string', 'max:50'],
+            'content' => ['required', 'max:500'],
         ]);
         $question = new Question;
         $question->user_id = $request->user_id;
@@ -75,7 +75,7 @@ class QuestionController extends Controller
     }
     
      public function questionList($type_id)
-    {   $questions = Question::where('type_id',$type_id)->latest()->get();
+    {   $questions = Question::where('type_id',$type_id)->latest()->paginate(5);
         $category_names = [];
         $time = [];
         $users = [];

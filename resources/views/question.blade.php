@@ -70,6 +70,10 @@
            </div>
           
         @endforeach
+        <div class="col-sm-8">
+        {{$questions->links()}}        	
+        </div>
+
 
     </div>
 
