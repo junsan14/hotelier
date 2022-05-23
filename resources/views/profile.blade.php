@@ -200,7 +200,8 @@
 					    		<option value="2年生">2年生</option>
 					    		<option value="3年生">3年生</option>    
 					    		<option value="4年生">4年生</option> 
-					    		<option value="5年以上">5年以上</option>  		
+					    		<option value="5年以上">5年以上</option>  
+					    		<option value="無職">無職</option>  		
 					    	</select>
 					  </div>
 					  <br>

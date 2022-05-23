@@ -16,6 +16,8 @@
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8534851946321815"
+     crossorigin="anonymous"></script>
 
 </head>
 <body>

@@ -44,9 +44,9 @@
                 <a href="{{route('question.show',[$pop_questions[1][$i],$pop_questions[0][$i]])}}">
                     <li>
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        {{$pop_questions[2][$i]}}
-                        (<img src="{{asset('image/comment02.png')}}"class="icon"  alt="">
-                        {{$pop_questions[3][$i]}} )
+                        {{$pop_questions[2][$i]}}-
+                        <img src="{{asset('image/comment02.png')}}"class="icon"  alt="">
+                        {{$pop_questions[3][$i]}}
                     </li>
                 </a>
                 @endif
