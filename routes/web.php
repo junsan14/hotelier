@@ -27,6 +27,7 @@ use App\Http\Controllers\TwitterController;
 
 Auth::routes(['verify'=>true]);
 
+
 Route::controller(HomeController::class)->group(function(){
 	Route::get('/','index')->name('home');
 	Route::get('/home','index')->name('home');
