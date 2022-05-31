@@ -16,7 +16,6 @@
     <div class="title">
         <p>人気の悩み/相談</p>
     </div>
-
     <div class="content row">
         <div class="col-sm-5 list">
             <div class="list-title">注目悩み</div>

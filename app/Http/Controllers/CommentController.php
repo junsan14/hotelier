@@ -14,21 +14,28 @@ class CommentController extends Controller
 {
     public function storeComment(Request $request){
         $auth = Auth::user();
-        if($auth->hotel_adr){
-            $comment = new Comment;
-            $comment->question_id = $request->question_id;
-            $comment->user_id = $auth->id;
-            $comment->content = $request->content;
-            $comment->save();
-            return response()->json(compact('request'));
+        if($auth){
+            if($auth->hotel_adr){
+                $comment = new Comment;
+                $comment->question_id = $request->question_id;
+                $comment->user_id = $auth->id;
+                $comment->content = $request->content;
+                $comment->save();
+                return response()->json(compact('request'));
+            }else{
+                $msg = 'プロフィールの入力が必要です';
+                return response()->json(compact('msg'));
+            }
+            
 
         }else{
-            return back()->with('signupError', true);
+            $msg = 'ログインが必要です';
+            return response()->json(compact('msg'));
         }
 
     }
     public function fetchComment($question_id){
-       
+        $auth = Auth::user();
         $comments = Comment::where('question_id', $question_id)->latest()->get();
         $users = [];
         $time = [];
@@ -37,8 +44,13 @@ class CommentController extends Controller
             array_push($time,$comment->created_at->diffForHumans());
             array_push($users,User::where('id', $comment->user_id)->first());
         }
-
-        return response()->json(compact('comments','users','time'));
+        if($auth){
+            return response()->json(compact('comments','users','time',
+                'auth'));
+        }else{
+            return response()->json(compact('comments','users','time'));
+        }
+        
     }
 
 

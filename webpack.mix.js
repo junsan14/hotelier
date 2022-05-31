@@ -12,11 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .react()
     .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
-
-
-mix.browserSync({
+    .browserSync({
     proxy: {
         target: "http://localhost:8000",
     },
@@ -25,10 +23,4 @@ mix.browserSync({
         'public/css/*.css',
         'public/js/*.js',
     ],
-});
-
-mix.webpackConfig({
-    stats: {
-        children: true,
-    },
-});
+    });

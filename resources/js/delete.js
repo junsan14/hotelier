@@ -14,7 +14,7 @@ export function alert(){
 
 		if(result){
 			let question_id = $(this).parent().parent().data('id');
-			console.log(question_id)
+			//console.log(question_id)
 			$.ajax({
 	            headers: {
 	                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

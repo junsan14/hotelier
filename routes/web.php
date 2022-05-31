@@ -50,12 +50,13 @@ Route::controller(QuestionController::class)->group(function(){
 
 });
 Route::controller(LikeController::class)->group(function(){
-	Route::get('/like/{question_id}', 'fetchLikeCount');
-	Route::post('/like', 'LikeStore');
-	Route::post('/unlike', 'unLikeStore');
+	Route::get('/like/{question_id}/{comment_id}', 'fetchLikeCount');
+	Route::post('/like/{question_id}/{comment_id}', 'LikeStore');
+	Route::post('/unlike/{question_id}/{comment_id}', 'unLikeStore');
 });
 Route::controller(CommentController::class)->group(function(){
 	Route::get('/comment/{question_id}', 'fetchComment');
+	Route::post('/comment/store', 'storeComment');
 
 });
 Route::controller(ProfileController::class)->group(function(){
@@ -74,7 +75,7 @@ Route::middleware(['verified','profilesetup'])->group(function(){
 	Route::get('/new', [QuestionController::class, 'new'])->name('question.new');
 	Route::post('/new', [QuestionController::class, 'post'])->name('post.question');
 	Route::get('/category/{type_id}', [CategoryController::class, 'fetchCategory']);
-	Route::post('/comment/store', [CommentController::class, 'storeComment']);
+
 });
 
 
@@ -83,3 +84,7 @@ Route::middleware(['verified','profilesetup'])->group(function(){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

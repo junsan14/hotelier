@@ -33,7 +33,7 @@ export function showList(){
 	let $select = $('.js-select');
 	let $student_area = $('.js-student-details');
 	let $worker_area = $('.js-worker-details');
-	console.log($worker_area.find('select'))
+	//console.log($worker_area.find('select'))
 	$(window).on('load', ()=>{
 		if($select.val() === '在職'){
 			$student_area.removeClass('show');

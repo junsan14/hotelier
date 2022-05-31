@@ -9,14 +9,19 @@ use App\Models\Comment;
 class LikeController extends Controller
 {   
     public function likeStore(Request $request){
-
         $auth = Auth::User();
-        $like = new Like();
-        $like->user_id = $auth->id;
-        $like->question_id = $request->question_id;
-        $like->comment_id = $request->comment_id;
-        $like->save();
+        if($auth){
+            $like = new Like();
+            $like->user_id = $auth->id;
+            $like->question_id = $request->question_id;
+            $like->comment_id = $request->comment_id;
+            $like->save();
             return response()->json(compact('like'));
+        }else{
+            $msg = 'ログインが必要です';
+            return response()->json(compact('msg'));
+        }
+        
         
         
         
@@ -34,36 +39,24 @@ class LikeController extends Controller
         
     }
 
-    public function fetchLikeCount($question_id){
+    public function fetchLikeCount($question_id, $comment_id){
         $auth = Auth::User();
-        $comments = Comment::where('question_id', $question_id)->latest()->get();
-        $likes = [];
-        $authorLikes = [];
-        array_push($likes, Like::where([
+
+        $count = Like::where([
             ['question_id', $question_id],
-            ['comment_id',0],
-        ])->count());
+            ['comment_id', $comment_id]
+        ])->count();
 
         if($auth){
-                 array_push($authorLikes, Like::where([
-                ['user_id',$auth->id],
-                ['question_id',$question_id],
-                ['comment_id',0],
-                ])->first());
-
-                foreach($comments as $comment){
-                    array_push($likes,Like::where([
-                        ['comment_id', $comment->id],
-                    ])->count());
-                    array_push($authorLikes, Like::where([
-                        ['user_id',$auth->id],
-                        ['comment_id',$comment->id],
-                    ])->first());
-                }
-                return response()->json(compact('likes', 'authorLikes','auth'));
+            $authorLike = Like::where([
+                ['user_id', $auth->id],
+                ['question_id', $question_id],
+                ['comment_id', $comment_id],
+            ])->count();  
+            return response()->json(compact('count', 'authorLike','auth'));
 
         }else{
-            return response()->json(compact('likes'));
+            return response()->json(compact('count'));
         }
     }
 }
