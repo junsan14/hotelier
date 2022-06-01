@@ -4806,8 +4806,6 @@ textarea.form-control-lg {
   display: block;
   color: #505A5F;
   text-decoration: none;
-  background-color: #f5f5f5;
-  border: 1px solid #dee2e6;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4819,12 +4817,11 @@ textarea.form-control-lg {
   z-index: 2;
   color: #111;
   background-color: #eee;
-  border-color: #dee2e6;
 }
 .page-link:focus {
   z-index: 3;
-  color: #111;
-  background-color: #fff;
+  color: #0a58ca;
+  background-color: #eee;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
@@ -4835,13 +4832,12 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #111;
-  background-color: #fff;
-  border-color: rgba(0, 0, 0, 0.1);
+  background-color: #eee;
+  border-color: #eee;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
-  background-color: #eee;
   border-color: #dee2e6;
 }
 
