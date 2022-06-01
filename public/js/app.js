@@ -2502,15 +2502,16 @@ var FetchComment = /*#__PURE__*/function (_React$Component3) {
     value: function render() {
       var _this5 = this;
 
-      var blur = !this.props.auth ? '<div className="visiter-advice">コメント閲覧希望はユーザー登録</div><div className="visiter-blur">' : '';
-      var blurend = !this.props.auth ? '</div>' : '';
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "title",
           children: "\u30B3\u30E1\u30F3\u30C8\u4E00\u89A7"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: !this.props.auth ? 'visiter-advice show' : 'visiter-advice',
-          children: "\u30B3\u30E1\u30F3\u30C8\u95B2\u89A7\u5E0C\u671B\u306F\u30E6\u30FC\u30B6\u30FC\u767B\u9332"
+          children: ["\u30B3\u30E1\u30F3\u30C8\u95B2\u89A7\u5E0C\u671B\u306F", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            href: "../../register",
+            children: "\u30E6\u30FC\u30B6\u30FC\u767B\u9332\u304C\u5FC5\u8981\u3067\u3059"
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: !this.props.auth ? 'visiter-blur show' : 'visiter-blur',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {

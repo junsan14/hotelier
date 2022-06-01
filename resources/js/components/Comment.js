@@ -95,13 +95,10 @@ class FetchComment extends React.Component{
 		super(props);
 	}	
 	render(){
-		const blur = !this.props.auth?
-					 '<div className="visiter-advice">コメント閲覧希望はユーザー登録</div><div className="visiter-blur">':'';
-		const blurend = !this.props.auth?'</div>':'';
 		return(
 			<React.Fragment>
 			<div className="title">コメント一覧</div>
-				<div className={!this.props.auth?'visiter-advice show':'visiter-advice'}>コメント閲覧希望はユーザー登録</div>
+				<div className={!this.props.auth?'visiter-advice show':'visiter-advice'}>コメント閲覧希望は<a href="../../register">ユーザー登録が必要です</a></div>
 				<div className={!this.props.auth?'visiter-blur show':'visiter-blur'}>
 				<div className="col-sm-8 comment-list" id='comment-list'>
 
